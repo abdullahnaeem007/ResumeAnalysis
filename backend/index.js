@@ -4,7 +4,6 @@ const stripe=require('stripe')('sk_test_51NzduCChmFSf0SILqtfTq7q8MfF05ib7aismZbn
 const uuid = require('uuid').v4
 const cors = require('cors')
 const PdfParse = require('pdf-parse')
-const { async } = require('node-stream-zip')
 const OpenAI = require('openai')
 const {config} = require('dotenv')
 
