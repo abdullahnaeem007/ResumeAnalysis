@@ -24,7 +24,8 @@
     "stripe": "^13.9.0",
     "uuid": "^9.0.1",
     "word-extractor": "^1.0.4",
-    "xml2js": "^0.6.2"
+    "xml2js": "^0.6.2",
+    "web-streams-polyfill": "^4.0.0-beta.3"
   },
   "devDependencies": {
     "nodemon": "^3.0.1"
