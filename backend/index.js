@@ -8,6 +8,7 @@ const pdfjslib=require('pdfjs-dist/legacy/build/pdf')
 const { async } = require('node-stream-zip')
 const OpenAI = require('openai')
 const {config} = require('dotenv')
+const { ReadableStream } = require('web-streams-polyfill');
 
 config()
 
