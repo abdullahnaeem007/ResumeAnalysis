@@ -4,11 +4,9 @@ const stripe=require('stripe')('sk_test_51NzduCChmFSf0SILqtfTq7q8MfF05ib7aismZbn
 const uuid = require('uuid').v4
 const cors = require('cors')
 const PdfParse = require('pdf-parse')
-const pdfjslib=require('pdfjs-dist/legacy/build/pdf')
 const { async } = require('node-stream-zip')
 const OpenAI = require('openai')
 const {config} = require('dotenv')
-const fs = require('fs');
 
 
 
@@ -101,15 +99,8 @@ app.post('/pdfParser', async (req, res) => {
     try {
       const pdfData = req.body;
       const pdfText = await parsePDFText(pdfData)
-
-      const pdfarray=new Uint8Array(pdfData)
-    
-      const loadingtask=pdfjslib.getDocument(pdfarray)
-      loadingtask.promise.then(function(doc){
-        const numPages=doc.numPages
-        res.status(200).json({text:pdfText,pages:numPages});
-      })
       
+      res.status(200).json({text:pdfText});
       
     } catch (error) {
       console.error('Error sending PDF:', error);
